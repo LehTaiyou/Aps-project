@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição no Evento</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button>
+            <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
+        </div>
+        <button class="voltar-btn">voltar</button>
+    </header>
+
+    <main>
+        <div class="event-details">
+            <h1>Evento</h1>
+            <p><strong>Título:</strong> <span id="titulo-evento"></span></p>
+            <p><strong>Descrição:</strong> <span id="descricao-evento"></span></p>
+            <p><strong>Local:</strong> <span id="local-evento"></span></p>
+            <p><strong>Data:</strong> <span id="data-evento"></span></p>
+            <p><strong>Carga horária:</strong> <span id="carga-horaria-evento"></span></p>
+            <p><strong>Máximo de Participantes:</strong> <span id="max-participantes-evento"></span></p>
+            <div class="button-group">
+                <button class="btn inscrever-btn">Inscrever-se</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        document.getElementById('titulo-evento').textContent = 'Título do evento';
+        document.getElementById('descricao-evento').textContent = 'Descrição do evento';
+        document.getElementById('local-evento').textContent = 'Local do evento';
+        document.getElementById('data-evento').textContent = 'Data do evento';
+        document.getElementById('carga-horaria-evento').textContent = '2h';
+        document.getElementById('max-participantes-evento').textContent = '200';
+    </script>
+</body>
+</html>
