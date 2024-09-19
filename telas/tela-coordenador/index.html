@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Perfil Coordenador</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <button class="menu-button">
+                <div class="menu-icon-bar"></div>
+                <div class="menu-icon-bar"></div>
+                <div class="menu-icon-bar"></div>
+            </button>
+        </div>
+        <div class="header-right">
+            <img class="logo-uece" src="img/logo-uece.png" alt="Logo da Universidade Estadual do Ceará">
+        </div>
+        <button class="logoff-button">logoff</button>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">coordenador</h1>
+        <h2 id="curso-name">Curso: Ciências da Computação</h2>
+
+        <div class="grid-container">
+            <!-- Professores do curso -->
+            <div class="card" id="professores-section">
+                <h2 class="card-title">Professores</h2>
+                <div class="card-content" id="professores-list">
+                    <!-- Professores serão exibidos aqui -->
+                    <ul>
+                        <li>
+                            <a href="/professor/1150963">Matheus Paixão</a> <!-- Link para página do professor -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Eventos do curso -->
+            <div class="card" id="eventos-section">
+                <h2 class="card-title">Eventos do Curso</h2>
+                <div class="card-content" id="eventos-list">
+                    <!-- Eventos serão exibidos aqui -->
+                    <ul>
+                        <li>
+                            <a href="/evento/show-do-post-malone">show do post malone</a> <!-- Link para página do evento -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Alunos do curso -->
+            <div class="card" id="alunos-section">
+                <h2 class="card-title">Alunos</h2>
+                <div class="card-content" id="alunos-list">
+                    <!-- Alunos serão exibidos aqui -->
+                    <ul>
+                        <li>
+                            <a href="/aluno/1600650">Rodrigo da Silva</a> <!-- Link para página do aluno -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Aluno</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button>
+            <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
+        </div>
+        <button class="logoff-btn">logoff</button>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <h1>aluno</h1>
+            <div class="profile-info">
+                <img src="img/aluno.png" alt="Imagem padrão do aluno" class="profile-pic">
+                <div class="student-info">
+                    <p id="nome-aluno"></p>
+                    <p id="matricula-aluno"></p>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <p id="horas-completas"></p>
+            </div>
+            <div class="button-group">
+                <button class="btn eventos-btn">eventos</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Exemplo de preenchimento com dados dinâmicos via JS
+        // Substitua pelos dados do back-end
+        document.getElementById('nome-aluno').textContent = 'Rodrigo da Silva';
+        document.getElementById('matricula-aluno').textContent = '1600650';
+
+        // Simulação de progresso de horas (por exemplo, 10 horas completadas de 22)
+        const horasCompletadas = 11; // Substituir pelo valor vindo do back-end
+        const horasTotais = 22;      // Substituir pelo valor vindo do back-end
+        document.getElementById('horas-completas').textContent = `${horasCompletadas}/${horasTotais}`;
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = `${(horasCompletadas / horasTotais) * 100}%`;
+    </script>
+</body>
+</html>
