@@ -18,7 +18,7 @@
         <div class="header-right">
             <img class="logo-uece" src="img/logo-uece.png" alt="Logo da Universidade Estadual do Ceará">
         </div>
-        <button class="logoff-button">logoff</button>
+        <button class="logoff-button" onclick="voltarParaLogin()">logoff</button> <!-- Adiciona o evento onclick -->
     </header>
 
     <div class="container">
@@ -66,5 +66,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Função para redirecionar para a página de login
+        function voltarParaLogin() {
+            window.location.href = 'login.html'; // Redireciona para login.html
+        }
+    </script>
 </body>
 </html>

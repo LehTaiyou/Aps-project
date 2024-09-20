@@ -12,7 +12,7 @@
             <button class="menu-btn">&#9776;</button>
             <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
         </div>
-        <button class="voltar-btn">voltar</button>
+        <button class="voltar-btn" onclick="voltarParaTelaProfessor()">voltar</button> <!-- Adiciona o evento onclick -->
     </header>
 
     <main>
@@ -57,5 +57,12 @@
             </div>
         </form>
     </main>
+
+    <script>
+        // Função para redirecionar para a tela do professor
+        function voltarParaTelaProfessor() {
+            window.location.href = 'tela-professor.html'; // Redireciona para tela-professor.html
+        }
+    </script>
 </body>
 </html>

@@ -12,7 +12,7 @@
             <button class="menu-btn">&#9776;</button>
             <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
         </div>
-        <button class="logoff-btn">logoff</button>
+        <button class="logoff-btn" onclick="fazerLogoff()">logoff</button> <!-- Botão de logoff com função JS -->
     </header>
 
     <main>
@@ -30,23 +30,31 @@
                 <p id="horas-completas"></p>
             </div>
             <div class="button-group">
-                <button class="btn eventos-btn">eventos</button>
+                <button class="btn eventos-btn" onclick="irParaEventos()">eventos</button>
             </div>
         </div>
     </main>
 
     <script>
         // Exemplo de preenchimento com dados dinâmicos via JS
-        // Substitua pelos dados do back-end
         document.getElementById('nome-aluno').textContent = 'Rodrigo da Silva';
         document.getElementById('matricula-aluno').textContent = '1600650';
 
-        // Simulação de progresso de horas (por exemplo, 10 horas completadas de 22)
         const horasCompletadas = 11; // Substituir pelo valor vindo do back-end
         const horasTotais = 22;      // Substituir pelo valor vindo do back-end
         document.getElementById('horas-completas').textContent = `${horasCompletadas}/${horasTotais}`;
         const progressBar = document.getElementById('progress-bar');
         progressBar.style.width = `${(horasCompletadas / horasTotais) * 100}%`;
+
+        // Função para redirecionar para a página de visualização de eventos
+        function irParaEventos() {
+            window.location.href = 'visualizaçao-dos-eventos.html'; // Redireciona para a página de eventos
+        }
+
+        // Função para redirecionar para a página de login (logoff)
+        function fazerLogoff() {
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        }
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Escolha de Perfil</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
@@ -15,22 +15,53 @@
     </header>
 
     <main>
-        <h1>Login</h1>
+        <h1>Escolha o seu Perfil</h1>
 
-        <form class="login-form">
-            <div class="input-group">
-                <label for="usuario">Usuário</label>
-                <input type="text" id="usuario" placeholder="Nome ou Matrícula">
-            </div>
-            <div class="input-group">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="12345">
+        <form class="perfil-form">
+            <div class="perfil-group">
+                <label>
+                    <input type="radio" name="perfil" value="aluno" required>
+                    Aluno
+                </label>
+                <label>
+                    <input type="radio" name="perfil" value="professor">
+                    Professor
+                </label>
+                <label>
+                    <input type="radio" name="perfil" value="coordenador">
+                    Coordenador
+                </label>
             </div>
             <div class="button-group">
-                <button type="button" class="btn voltar-btn">Voltar</button>
-                <button type="submit" class="btn logar-btn">Logar</button>
+                <button type="button" class="btn voltar-btn" onclick="voltarParaTelaMain()">Voltar</button>
+                <button type="button" class="btn confirmar-btn" onclick="confirmarEscolha()">Confirmar</button>
             </div>
         </form>
     </main>
+
+    <script>
+        // Função para voltar para tela-main.html
+        function voltarParaTelaMain() {
+            window.location.href = 'tela-main.html'; // Redireciona para tela-main.html
+        }
+
+        // Função para confirmar a escolha do perfil e redirecionar
+        function confirmarEscolha() {
+            const perfilSelecionado = document.querySelector('input[name="perfil"]:checked');
+            if (perfilSelecionado) {
+                const perfil = perfilSelecionado.value;
+                // Redirecionamento baseado no perfil escolhido
+                if (perfil === 'aluno') {
+                    window.location.href = 'tela-aluno.html'; // Redireciona para tela-aluno.html
+                } else if (perfil === 'professor') {
+                    window.location.href = 'tela-professor.html'; // Redireciona para tela-professor.html
+                } else if (perfil === 'coordenador') {
+                    window.location.href = 'tela-coordenador.html'; // Redireciona para tela-coordenador.html
+                }
+            } else {
+                alert('Por favor, escolha um perfil.');
+            }
+        }
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
         <h1>eventos</h1>
     </header>
 
-    <button class="voltar-btn">voltar</button>
+    <button class="voltar-btn" onclick="voltarParaPerfil()">voltar</button> <!-- Botão "voltar" com função JS -->
 
     <main>
         <div class="eventos-container">
@@ -23,9 +23,7 @@
                 <div class="titulo-evento">Eventos participando</div>
                 <div class="evento-info">
                     <ul>
-                        <!-- Exemplo de link para evento inscrito (puxado do backend) -->
                         <li><a href="/evento/1" class="evento-link">Título: Inteligência Artificial</a></li>
-                        <!-- Mais eventos serão carregados dinamicamente -->
                     </ul>
                 </div>
             </div>
@@ -33,13 +31,18 @@
                 <div class="titulo-evento">Eventos disponíveis</div>
                 <div class="evento-info">
                     <ul>
-                        <!-- Exemplo de link para evento disponível (puxado do backend) -->
                         <li><a href="/evento/2" class="evento-link">Título: Inovação Tecnológica</a></li>
-                        <!-- Mais eventos serão carregados dinamicamente -->
                     </ul>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        // Função para redirecionar para a página de perfil do aluno
+        function voltarParaPerfil() {
+            window.location.href = 'tela-aluno.html'; // Redireciona para a página de perfil do aluno
+        }
+    </script>
 </body>
 </html>

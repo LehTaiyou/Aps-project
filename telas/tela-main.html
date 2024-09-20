@@ -17,9 +17,16 @@
     <main class="main-container">
         <h1>Horas Online</h1>
         <div class="button-group">
-            <button class="login-btn">Login</button>
+            <button class="login-btn" onclick="irParaLogin()">Login</button> <!-- Botão de Login -->
             <button class="cadastro-btn">Cadastrar</button>
         </div>
     </main>
+
+    <script>
+        // Função JavaScript para redirecionar para a página login.html
+        function irParaLogin() {
+            window.location.href = 'login.html'; // Redireciona para login.html
+        }
+    </script>
 </body>
 </html>

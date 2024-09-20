@@ -18,7 +18,7 @@
         <div class="header-right">
             <img class="logo-uece" src="img/logo-uece.png" alt="Logo da Universidade Estadual do Ceará">
         </div>
-        <button class="logoff-button">logoff</button>
+        <button class="logoff-button" onclick="voltarParaLogin()">logoff</button> <!-- Adiciona o evento onclick -->
     </header>
 
     <div class="container">
@@ -48,7 +48,19 @@
         </div>
 
         <!-- Botão Criar Evento -->
-        <button class="create-event-button">Criar Evento</button>
+        <button class="create-event-button" onclick="criarEvento()">Criar Evento</button> <!-- Adiciona o evento onclick -->
     </div>
+
+    <script>
+        // Função para redirecionar para a página de login
+        function voltarParaLogin() {
+            window.location.href = 'login.html'; // Redireciona para login.html
+        }
+
+        // Função para redirecionar para a página de cadastro de evento
+        function criarEvento() {
+            window.location.href = 'cadastro-evento.html'; // Redireciona para cadastro-de-evento.html
+        }
+    </script>
 </body>
 </html>
