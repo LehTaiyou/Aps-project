@@ -103,6 +103,31 @@ main {
     border-radius: 0 0 10px 10px;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
+}
+
+.evento-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.evento-info ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.evento-link {
+    color: #008c4a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.evento-link:hover {
+    text-decoration: underline;
 }
