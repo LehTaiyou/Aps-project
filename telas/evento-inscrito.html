@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Inscrito</title>
+    <link rel="stylesheet" href="css/evento-inscrito.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button>
+            <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
+        </div>
+        <button class="voltar-btn">voltar</button>
+    </header>
+
+    <main>
+        <div class="event-details">
+            <h1>Evento</h1>
+            <p><strong>Título:</strong> <span id="titulo-evento"></span></p>
+            <p><strong>Descrição:</strong> <span id="descricao-evento"></span></p>
+            <p><strong>Local:</strong> <span id="local-evento"></span></p>
+            <p><strong>Data:</strong> <span id="data-evento"></span></p>
+            <p><strong>Carga horária:</strong> <span id="carga-horaria-evento"></span></p>
+            <p><strong>Máximo de Participantes:</strong> <span id="max-participantes-evento"></span></p>
+            <div class="button-group">
+                <button class="btn checkin-btn">Check-in/Checkout</button>
+                <button class="btn cancelar-btn">Cancelar Inscrição</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Função para carregar dados do evento do backend
+        async function carregarDadosEvento() {
+            try {
+                const response = await fetch('/api/evento/123'); // URL fictícia da API para obter os dados do evento
+                const dados = await response.json();
+
+                // Atualiza o conteúdo da página com os dados obtidos da API
+                document.getElementById('titulo-evento').textContent = dados.titulo;
+                document.getElementById('descricao-evento').textContent = dados.descricao;
+                document.getElementById('local-evento').textContent = dados.local;
+                document.getElementById('data-evento').textContent = dados.data;
+                document.getElementById('carga-horaria-evento').textContent = dados.cargaHoraria;
+                document.getElementById('max-participantes-evento').textContent = dados.maxParticipantes;
+            } catch (error) {
+                console.error('Erro ao carregar os dados do evento:', error);
+            }
+        }
+
+        // Chama a função ao carregar a página
+        carregarDadosEvento();
+
+        // Função para o check-in/checkout
+        document.querySelector('.checkin-btn').addEventListener('click', async function() {
+            try {
+                const response = await fetch('/api/evento/123/checkin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (response.ok) {
+                    alert('Check-in/Checkout realizado com sucesso.');
+                } else {
+                    alert('Erro ao realizar o Check-in/Checkout.');
+                }
+            } catch (error) {
+                console.error('Erro no Check-in/Checkout:', error);
+            }
+        });
+
+        // Função para cancelar a inscrição
+        document.querySelector('.cancelar-btn').addEventListener('click', async function() {
+            if (confirm('Tem certeza que deseja cancelar sua inscrição?')) {
+                try {
+                    const response = await fetch('/api/evento/123/cancelar-inscricao', {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    if (response.ok) {
+                        alert('Inscrição cancelada com sucesso.');
+                    } else {
+                        alert('Erro ao cancelar a inscrição.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao cancelar inscrição:', error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
