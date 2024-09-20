@@ -145,3 +145,21 @@ header {
     color: #004a1f;
     text-decoration: underline;
 }
+
+.create-event-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008037;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-event-button:hover {
+    background-color: #005a28;
+}
+
