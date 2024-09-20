@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Evento</title>
+    <link rel="stylesheet" href="css/cadastro-evento.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button>
+            <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
+        </div>
+        <button class="voltar-btn" onclick="voltarParaTelaProfessor()">voltar</button> <!-- Adiciona o evento onclick -->
+    </header>
+
+    <main>
+        <h1>Cadastrar evento</h1>
+        <form class="event-form" id="event-form">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" placeholder="Palestra">
+                </div>
+                <div class="input-group">
+                    <label for="local">Local</label>
+                    <input type="text" id="local" placeholder="Local da palestra">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" placeholder="Descrição da palestra"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="data">Data</label>
+                    <input type="text" id="data" placeholder="DD/MM/YYYY">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="carga-horaria">Carga horária</label>
+                    <input type="text" id="carga-horaria" placeholder="Xh">
+                </div>
+                <div class="input-group">
+                    <label for="participantes">Máximo de participantes</label>
+                    <input type="text" id="participantes" placeholder="XXX">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn cancelar-btn">Cancelar</button>
+                <button type="submit" class="btn criar-btn">Criar Evento</button>
+            </div>
+        </form>
+        <script src="js/script-cadastro-evento.js"></script>
+    </main>
+
+    <script>
+        // Função para redirecionar para a tela do professor
+        function voltarParaTelaProfessor() {
+            window.location.href = 'tela-professor.html'; // Redireciona para tela-professor.html
+        }
+    </script>
+    
+</body>
+</html>

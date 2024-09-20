@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #008c4a;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logoff-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.profile-container {
+    background-color: #c7d3c1;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.student-info {
+    text-align: left;
+}
+
+.student-info p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.progress-bar {
+    background-color: #333;
+    height: 100%;
+    border-radius: 5px;
+    width: 0; /* Dinâmico - será ajustado com base nas horas completadas */
+    transition: width 0.5s ease-in-out;
+}
+
+/* Estilo para o texto das horas */
+#horas-completas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white; /* Mudamos para branco para maior contraste */
+    font-weight: bold;
+}
+
+
+.button-group {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.eventos-btn {
+    background-color: #333;
+    color: white;
+    width: 150px;
+}
+
+.eventos-btn:hover {
+    background-color: #000;
+}

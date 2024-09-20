@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas Online - Login</title>
+    <link rel="stylesheet" href="css/tela-main.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button> 
+            <img src="img/logo-uece.png" alt="Logo Universidade Estadual do Ceará" class="logo">
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Horas Online</h1>
+        <div class="button-group">
+            <button class="login-btn" onclick="irParaLogin()">Login</button> <!-- Botão de Login -->
+            <button class="cadastro-btn">Cadastrar</button>
+        </div>
+    </main>
+
+    <script>
+        // Função JavaScript para redirecionar para a página login.html
+        function irParaLogin() {
+            window.location.href = 'login.html'; // Redireciona para login.html
+        }
+    </script>
+</body>
+</html>

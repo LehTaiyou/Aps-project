@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Aluno</title>
+    <link rel="stylesheet" href="css/tela-aluno.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button>
+            <img src="img/logo-uece.png" alt="Universidade Estadual do Ceará" class="logo">
+        </div>
+        <button class="logoff-btn" onclick="fazerLogoff()">logoff</button> <!-- Botão de logoff com função JS -->
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <h1>aluno</h1>
+            <div class="profile-info">
+                <img src="img/aluno.png" alt="Imagem padrão do aluno" class="profile-pic">
+                <div class="student-info">
+                    <p id="nome-aluno"></p>
+                    <p id="matricula-aluno"></p>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <p id="horas-completas"></p>
+            </div>
+            <div class="button-group">
+                <button class="btn eventos-btn" onclick="irParaEventos()">eventos</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const matriculaAluno = urlParams.get('aluno')
+
+        fetch('/alunos/' + matriculaAluno)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar aluno');
+            }
+            return response.json(); // Pega o JSON da resposta
+        })
+        .then(result => {
+            console.log(result)
+            document.getElementById('nome-aluno').textContent = result.nome;
+
+            document.getElementById('matricula-aluno').textContent = result.matricula;
+
+            const horasCompletadas = result.horasCumpridas;
+            const horasTotais = 22;
+            document.getElementById('horas-completas').textContent = `${horasCompletadas}/${horasTotais}`;
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = `${(horasCompletadas / horasTotais) * 100}%`;
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao buscar aluno');
+        });
+
+        // Função para redirecionar para a página de visualização de eventos
+        function irParaEventos() {
+            window.location.href = 'visualizaçao-dos-eventos.html'; // Redireciona para a página de eventos
+        }
+
+        // Função para redirecionar para a página de login (logoff)
+        function fazerLogoff() {
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        }
+    </script>
+</body>
+</html>

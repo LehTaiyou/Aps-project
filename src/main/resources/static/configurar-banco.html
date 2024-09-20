@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Inicial</title>
+</head>
+<body>
+    <h1>Cadastro Inicial</h1>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <script>
+        function cadastrar() {
+            // Cadastrar aluno
+            fetch(`/alunos`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ matricula: '1600650', nome: 'Rodrigo Silva', horasCumpridas: 11})
+            });
+
+            // Cadastrar professor
+            fetch(`/professores`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ matricula: '1150963', nome: 'Matheus Paixão' })
+            });
+
+            // Cadastrar evento
+            fetch(`/eventos`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: 'evento123',
+                    titulo: 'Palestra sobre Tecnologia',
+                    descricao: 'Uma palestra incrível sobre as últimas tendências em tecnologia.',
+                    local: 'Auditório Principal',
+                    data: '2023-10-01',
+                    cargaHoraria: 2.0,
+                    maxParticipantes: 100,
+                    professorResponsavel: '54321'
+                })
+            });
+
+            alert('Cadastro realizado com sucesso!');
+        }
+    </script>
+</body>
+</html>

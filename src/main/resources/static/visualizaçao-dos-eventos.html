@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Universidade Estadual do Ceará</title>
+    <link rel="stylesheet" href="css/visualizaçao-dos-eventos.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="menu-btn">&#9776;</button> <!-- Ícone "hambúrguer" -->
+            <img src="img/logo-uece.png" alt="Logo Universidade Estadual do Ceará" class="logo">
+        </div>
+        <h1>eventos</h1>
+    </header>
+
+    <button class="voltar-btn" onclick="voltarParaPerfil()">voltar</button> <!-- Botão "voltar" com função JS -->
+
+    <main>
+        <div class="eventos-container">
+            <div class="evento">
+                <div class="titulo-evento">Eventos participando</div>
+                <div class="evento-info">
+                    <ul>
+                        <li><a href="/evento/1" class="evento-link">Título: Inteligência Artificial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="evento">
+                <div class="titulo-evento">Eventos disponíveis</div>
+                <div class="evento-info">
+                    <ul>
+                        <li><a href="/evento/2" class="evento-link">Título: Inovação Tecnológica</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Função para redirecionar para a página de perfil do aluno
+        function voltarParaPerfil() {
+            window.location.href = 'tela-aluno.html'; // Redireciona para a página de perfil do aluno
+        }
+    </script>
+</body>
+</html>
