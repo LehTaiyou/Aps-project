@@ -7,6 +7,7 @@ import com.aps.aps_project.model.ParticipacaoRequest;
 import com.aps.aps_project.repository.EventoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,5 +49,29 @@ public class InscricaoController {
         eventoRepository.save(evento);
 
         return "Inscrição realizada com sucesso!";
+    }
+
+    @DeleteMapping
+    public String cancelarInscricao(@RequestBody ParticipacaoRequest inscricaoRequest) {
+        String alunoMatricula = inscricaoRequest.getAlunoMatricula();
+        String eventoId = inscricaoRequest.getEventoId();
+
+        // Busca o evento pelo ID
+        Optional<Evento> optionalEvento = eventoRepository.findById(eventoId);
+        if (!optionalEvento.isPresent()) {
+            return "Evento não encontrado.";
+        }
+        Evento evento = optionalEvento.get();
+
+        // Verifica se o aluno está inscrito no evento
+        if (!evento.getAlunosInscritos().contains(alunoMatricula)) {
+            return "Aluno não está inscrito no evento.";
+        }
+
+        // Remove a matrícula do aluno da lista de inscritos
+        evento.getAlunosInscritos().remove(alunoMatricula);
+        eventoRepository.save(evento);
+
+        return "Participação removida com sucesso!";
     }
 }
