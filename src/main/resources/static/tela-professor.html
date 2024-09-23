@@ -27,8 +27,8 @@
         <div class="profile-info">
             <img src="img/prof.png" alt="Foto de perfil" class="profile-pic">
             <div class="info">
-                <p>Matheus Paixão</p>
-                <p>1150963</p>
+                <p id="nome-professor"></p>
+                <p id="matricula-professor"></p>
             </div>
         </div>
 
@@ -38,11 +38,7 @@
                 <h2 class="card-title">Eventos Criados</h2>
                 <div class="card-content" id="eventos-list">
                     <!-- Eventos serão exibidos aqui -->
-                    <ul>
-                        <li>
-                            <a href="/evento/show-do-post-malone">show-do-post-malone</a> <!-- Link para página do evento -->
-                        </li>
-                    </ul>
+                    <ul id="eventos"></ul>
                 </div>
             </div>
         </div>
@@ -51,16 +47,7 @@
         <button class="create-event-button" onclick="criarEvento()">Criar Evento</button> <!-- Adiciona o evento onclick -->
     </div>
 
-    <script>
-        // Função para redirecionar para a página de login
-        function voltarParaLogin() {
-            window.location.href = 'login.html'; // Redireciona para login.html
-        }
-
-        // Função para redirecionar para a página de cadastro de evento
-        function criarEvento() {
-            window.location.href = 'cadastro-evento.html'; // Redireciona para cadastro-de-evento.html
-        }
-    </script>
+    <script src="js/script-tela-professor.js"></script>
+    
 </body>
 </html>

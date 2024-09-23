@@ -93,7 +93,7 @@ header {
     background-color: #d1d8c4;
     padding: 20px;
     border-radius: 8px;
-    height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
 }
@@ -162,4 +162,3 @@ header {
 .create-event-button:hover {
     background-color: #005a28;
 }
-

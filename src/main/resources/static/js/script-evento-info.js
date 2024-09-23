@@ -1,10 +1,20 @@
 const urlParams = new URLSearchParams(window.location.search);
 const grupoBotoes = document.getElementById("button-group");
 const idEvento = urlParams.get('evento');
+const botaoVoltar = document.getElementById("voltar-btn")
 var matriculaAluno = '';
+var matriculaProfessor = '';
 
 function voltarParaEventos() {
     window.location.href = 'visualizaçao-dos-eventos.html?aluno=' + matriculaAluno;
+}
+
+function voltarParaProfessor() {
+    window.location.href = 'tela-professor.html?professor=' + matriculaProfessor;
+}
+
+function voltarParaCoordenador() {
+    window.location.href = 'tela-coordenador.html';
 }
 
 fetch('/eventos/' + idEvento)
@@ -45,11 +55,15 @@ function criaBotoes(evento) {
         matriculaAluno = urlParams.get('aluno');
         criaBotoesAluno(evento)
     } else if (urlParams.has('professor')) {
+        matriculaProfessor = urlParams.get('professor')
         criaBotoesProfessor();
+    } else {
+        botaoVoltar.onclick = voltarParaCoordenador;
     }
 }
 
 function criaBotoesAluno(evento) {
+    botaoVoltar.onclick = voltarParaEventos;
     if (evento.alunosInscritos != null && evento.alunosInscritos.includes(matriculaAluno)) {
         criaBotoesAlunoInscrito();
     }
@@ -59,6 +73,7 @@ function criaBotoesAluno(evento) {
 }
 
 function criaBotoesProfessor() {
+    botaoVoltar.onclick = voltarParaProfessor;
     botaoValidar = document.createElement("button");
     botaoValidar.className = "btn validar-btn";
     botaoValidar.onclick = validar;
@@ -91,10 +106,6 @@ function criaBotoesAlunoNaoInscrito() {
     botaoInscricao.innerHTML = "Inscrever-se";
 
     grupoBotoes.appendChild(botaoInscricao)
-}
-
-function validar() {
-
 }
 
 function inscrever () {
@@ -158,3 +169,6 @@ function gerarQRCode () {
 
 }
 
+function validar() {
+
+}

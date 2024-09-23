@@ -31,7 +31,6 @@ fetch('/eventos')
     return response.json(); // Pega o JSON da resposta
 })
 .then(eventos => {
-    console.log(eventos);
     eventos.forEach(evento => {
         adicionarEvento(evento);
     })

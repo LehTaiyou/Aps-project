@@ -1,3 +1,6 @@
+const urlParams = new URLSearchParams(window.location.search);
+const matriculaProfessor = urlParams.get('professor');
+
 document.getElementById('event-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Previne o comportamento padrão do formulário
 
@@ -27,7 +30,8 @@ document.getElementById('event-form').addEventListener('submit', function(event)
         local: local,
         data: formattedDate,  // Agora a data está no formato yyyy-MM-dd
         cargaHoraria: cargaHoraria,
-        maxParticipantes: maxParticipantes
+        maxParticipantes: maxParticipantes,
+        professorResponsavel: matriculaProfessor
     };
 
     // Envia os dados via fetch
@@ -44,11 +48,21 @@ document.getElementById('event-form').addEventListener('submit', function(event)
         }
         return response.json(); // Pega o JSON da resposta
     })
-    .then(() => {
+    .then(evento => {
         alert('Evento criado com sucesso');
+        irParaEvento(evento);
     })
     .catch(error => {
         console.error('Erro:', error);
         alert('Erro ao enviar o formulário: ' + error.message);
     });
 });
+
+// Função para redirecionar para a tela do professor
+function voltarParaTelaProfessor() {
+    window.location.href = 'tela-professor.html?professor=' + matriculaProfessor; // Redireciona para tela-professor.html
+}
+
+function irParaEvento(evento) {
+    window.location.href = 'evento-info.html?professor=' + matriculaProfessor + '&evento=' + evento.id;
+}
