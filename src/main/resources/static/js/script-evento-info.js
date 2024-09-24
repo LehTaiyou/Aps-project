@@ -1,7 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
-const grupoBotoes = document.getElementById("button-group");
 const idEvento = urlParams.get('evento');
-const botaoVoltar = document.getElementById("voltar-btn")
+
+const grupoBotoes = document.getElementById("button-group");
+const botaoVoltar = document.getElementById("voltar-btn");
+
 var matriculaAluno = '';
 var matriculaProfessor = '';
 
@@ -166,9 +168,9 @@ function cancelarInscricao() {
 }
 
 function gerarQRCode () {
-
+    window.location.href = 'validaçao-aluno.html?aluno=' + matriculaAluno + '&evento=' + idEvento;
 }
 
 function validar() {
-
+    window.location.href = 'validaçao-professor.html?professor=' + matriculaProfessor + '&evento=' + idEvento;
 }

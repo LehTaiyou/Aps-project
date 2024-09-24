@@ -44,6 +44,11 @@ public class ValidacaoController {
         }
         Evento evento = optionalEvento.get();
 
+        // Verifica se o aluno está inscrito no evento
+        if (evento.getAlunosInscritos() == null || !evento.getAlunosInscritos().contains(alunoMatricula)) {
+            return "Aluno não está inscrito neste evento.";
+        }
+
         // Verifica se o aluno já participou do evento
         if (aluno.getEventosPresente() != null && aluno.getEventosPresente().contains(eventoId)) {
             return "Aluno já validou participação neste evento.";
